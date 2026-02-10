@@ -1,0 +1,71 @@
+[Unit]
+Description=RustDesk WOL Proxy API Service
+Documentation=https://github.com/ddelorez/rustdesk-wol-proxy
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+# Service type: notify allows gunicorn to report readiness
+Type=notify
+
+# User and group for the service
+User=rustdesk-wol
+Group=rustdesk-wol
+
+# Working directory
+WorkingDirectory=/opt/rustdesk-wol-proxy
+
+# Load environment variables from .env file
+EnvironmentFile=/opt/rustdesk-wol-proxy/.env
+
+# Environment variables (can override .env if needed)
+Environment="PATH=/opt/rustdesk-wol-proxy/venv/bin:/usr/local/bin:/usr/bin:/bin"
+Environment="PYTHONUNBUFFERED=1"
+
+# Service execution command
+# Gunicorn configuration:
+# - 2 workers (1 spare for safety as per requirements)
+# - Bind to 0.0.0.0:5001
+# - 30 second timeout
+# - Preload app before forking workers
+# - Log to standard output/error for systemd journal
+ExecStart=/opt/rustdesk-wol-proxy/venv/bin/gunicorn \
+  --workers 2 \
+  --bind 0.0.0.0:5001 \
+  --timeout 30 \
+  --worker-class sync \
+  --preload-app \
+  --access-logfile - \
+  --error-logfile - \
+  --log-level info \
+  app:app
+
+# Restart policy: restart on any failure with 10 second cooldown
+Restart=on-failure
+RestartSec=10
+
+# Process management: keep process in foreground for systemd management
+KillMode=mixed
+KillSignal=SIGTERM
+
+# Resource limits (Phase 1 requirements):
+# Memory limit: 256M
+MemoryMax=256M
+
+# CPU quota: 50% (CPUQuota syntax: percentage, so 50% = 50000/100000)
+CPUQuota=50%
+
+# Security hardening (Phase 2 enhancements):
+# StandardInput and StandardOutput for journal integration
+StandardInput=null
+StandardOutput=journal
+StandardError=journal
+SyslogIdentifier=rustdesk-wol
+
+# Ensure service doesn't timeout during normal operation
+TimeoutStartSec=30
+TimeoutStopSec=10
+
+[Install]
+# Enable service at boot in multi-user.target
+WantedBy=multi-user.target
