@@ -1,0 +1,54 @@
+
+# Python virtual environment
+
+venv/
+
+__pycache__/
+
+*.pyc
+
+*.pyo
+
+*.pyd
+
+
+
+# Logs and temp files
+
+*.log
+
+*.log.*
+
+.DS_Store
+
+Thumbs.db
+
+
+
+# Editor/IDE files
+
+.vscode/
+
+.idea/
+
+*.swp
+
+*.swo
+
+
+
+# macOS junk
+
+.AppleDouble
+
+.LSOverride
+
+
+
+# Python cache
+
+.python-version
+
+pip-log.txt
+
+pip-delete-this-directory.txt
