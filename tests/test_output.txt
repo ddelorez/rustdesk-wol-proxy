@@ -1,0 +1,114 @@
+[2026-02-10 14:09:52,217] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,218] WARNING in app: [127.0.0.1] Missing id parameter
+[2026-02-10 14:09:52,218] WARNING in app: [127.0.0.1] Missing key parameter
+[2026-02-10 14:09:52,218] WARNING in app: [127.0.0.1] Invalid ID format: ID parameter exceeds maximum length (50 chars, got 51) (ID: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa)
+[2026-02-10 14:09:52,219] WARNING in app: [127.0.0.1] Invalid API key format: API key is too short (min 20 chars, got 10)
+[2026-02-10 14:09:52,219] WARNING in app: [127.0.0.1] Invalid ID format: ID parameter must contain only alphanumeric characters (ID: 123@456)
+[2026-02-10 14:09:52,219] WARNING in app: [127.0.0.1] Invalid API key attempt (key: wol_prod_i***, ID: 123456789)
+[2026-02-10 14:09:52,219] INFO in app: [127.0.0.1] Rate limit tracking: Invalid key attempt from IP
+[2026-02-10 14:09:52,220] WARNING in app: [127.0.0.1] No MAC address registered for this ID (ID: 999999999)
+[2026-02-10 14:09:52,220] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,220] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,221] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,221] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,221] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,222] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,222] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,222] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,222] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,223] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,223] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,223] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,223] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,224] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,224] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,224] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,224] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,225] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,225] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,225] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,225] INFO in app: [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+[2026-02-10 14:09:52,226] WARNING in app: [127.0.0.1] Missing id parameter
+[2026-02-10 14:09:52,226] WARNING in app: [127.0.0.1] Invalid API key attempt (key: wrong_key_***, ID: 123456789)
+[2026-02-10 14:09:52,226] INFO in app: [127.0.0.1] Rate limit tracking: Invalid key attempt from IP
+[2026-02-10 14:09:52,226] WARNING in app: [127.0.0.1] No MAC address registered for this ID (ID: unknown)
+
+[0;34m================================================================================[0m
+[0;34m      COMPREHENSIVE API TESTING - Task 1.3[0m
+[0;34m================================================================================[0m
+
+[0;34m>>> Test 1: Valid Request Tests[0m
+[0;32m✓ PASS: Valid request returns HTTP 200[0m
+[0;32m✓ PASS: Response contains correct 'status' field[0m
+[0;32m✓ PASS: Response contains correct 'id' field[0m
+[0;32m✓ PASS: Response contains correct 'mac' field[0m
+[0;32m✓ PASS: Response contains ISO 8601 UTC timestamp[0m
+
+[0;34m>>> Test 2: Missing Parameter Tests[0m
+[0;32m✓ PASS: Missing ID returns HTTP 400[0m
+[0;32m✓ PASS: Error code is MISSING_PARAMETER[0m
+[0;32m✓ PASS: Error response contains ISO 8601 UTC timestamp[0m
+[0;32m✓ PASS: Missing key returns HTTP 400[0m
+[0;32m✓ PASS: Error code is MISSING_PARAMETER[0m
+
+[0;34m>>> Test 3: Invalid Parameter Tests[0m
+[0;32m✓ PASS: Invalid ID (too long) returns HTTP 400[0m
+[0;32m✓ PASS: Error code is INVALID_PARAMETER[0m
+[0;32m✓ PASS: Invalid API key (too short) returns HTTP 400[0m
+[0;32m✓ PASS: Error code is INVALID_PARAMETER[0m
+[0;32m✓ PASS: Invalid ID format (special chars) returns HTTP 400[0m
+[0;32m✓ PASS: Error code is INVALID_PARAMETER[0m
+
+[0;34m>>> Test 4: Authentication Tests[0m
+[0;32m✓ PASS: Wrong API key returns HTTP 403[0m
+[0;32m✓ PASS: Error code is INVALID_KEY[0m
+
+[0;34m>>> Test 5: Not Found Tests[0m
+[0;32m✓ PASS: Unknown ID returns HTTP 404[0m
+[0;32m✓ PASS: Error code is UNKNOWN_ID[0m
+
+[0;34m>>> Test 6: Health Endpoint Tests[0m
+[0;32m✓ PASS: Health endpoint returns HTTP 200[0m
+[0;32m✓ PASS: Health response contains 'status': healthy[0m
+[0;32m✓ PASS: Health response contains ISO 8601 UTC timestamp[0m
+
+[0;34m>>> Test 7: Response Header Tests[0m
+[0;32m✓ PASS: Response contains X-Request-ID header: 29040ed9-f7fb-4e6f-b878-0d00252a6af2[0m
+[0;32m✓ PASS: Response contains X-Request-Duration-Ms header: 0ms[0m
+
+[0;34m>>> Test 8: Concurrent Request Simulation (Sequential)[0m
+[1;33mℹ Running 20 sequential requests to simulate load...[0m
+[0;32m✓ PASS: All 20 sequential requests completed successfully[0m
+
+[0;34m>>> Test 9: Logging Verification Tests[0m
+[0;32m✓ PASS: Log file exists: ./dev.log[0m
+[0;32m✓ PASS: Log entries contain IP addresses or entries logged[0m
+[0;32m✓ PASS: Log entries contain timestamps[0m
+[0;32m✓ PASS: API key appears to be masked in logs (contains ***)[0m
+[1;33mℹ Last 10 lines of log file:[0m
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:09:52 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+
+[0;34m>>> Test 10: Error Response Structure Validation[0m
+[0;32m✓ PASS: Missing parameter: All required fields present[0m
+[0;32m✓ PASS: Invalid key: All required fields present[0m
+[0;32m✓ PASS: Unknown ID: All required fields present[0m
+
+[0;34m================================================================================[0m
+[0;34m      TEST SUMMARY[0m
+[0;34m================================================================================[0m
+[1;33mℹ Total Passed: 33[0m
+[1;33mℹ Total Failed: 0[0m
+[1;33mℹ Total Tests: 33[0m
+
+[0;32m✓✓✓ ALL TESTS PASSED SUCCESSFULLY ✓✓✓[0m
+
+Test results saved to test_results.txt

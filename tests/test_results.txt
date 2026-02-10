@@ -1,0 +1,75 @@
+
+>>> Test 1: Valid Request Tests
+✓ PASS: Valid request returns HTTP 200
+✓ PASS: Response contains correct 'status' field
+✓ PASS: Response contains correct 'id' field
+✓ PASS: Response contains correct 'mac' field
+✓ PASS: Response contains ISO 8601 UTC timestamp
+
+>>> Test 2: Missing Parameter Tests
+✓ PASS: Missing ID returns HTTP 400
+✓ PASS: Error code is MISSING_PARAMETER
+✓ PASS: Error response contains ISO 8601 UTC timestamp
+✓ PASS: Missing key returns HTTP 400
+✓ PASS: Error code is MISSING_PARAMETER
+
+>>> Test 3: Invalid Parameter Tests
+✓ PASS: Invalid ID (too long) returns HTTP 400
+✓ PASS: Error code is INVALID_PARAMETER
+✓ PASS: Invalid API key (too short) returns HTTP 400
+✓ PASS: Error code is INVALID_PARAMETER
+✓ PASS: Invalid ID format (special chars) returns HTTP 400
+✓ PASS: Error code is INVALID_PARAMETER
+
+>>> Test 4: Authentication Tests
+✓ PASS: Wrong API key returns HTTP 403
+✓ PASS: Error code is INVALID_KEY
+
+>>> Test 5: Not Found Tests
+✓ PASS: Unknown ID returns HTTP 404
+✓ PASS: Error code is UNKNOWN_ID
+
+>>> Test 6: Health Endpoint Tests
+✓ PASS: Health endpoint returns HTTP 200
+✓ PASS: Health response contains 'status': healthy
+✓ PASS: Health response contains ISO 8601 UTC timestamp
+
+>>> Test 7: Response Header Tests
+✓ PASS: Response contains X-Request-ID header: a7b178be-3c08-4692-8213-e12aef6e1364
+✓ PASS: Response contains X-Request-Duration-Ms header: 0ms
+
+>>> Test 8: Concurrent Request Simulation (Sequential)
+ℹ Running 20 sequential requests to simulate load...
+✓ PASS: All 20 sequential requests completed successfully
+
+>>> Test 9: Logging Verification Tests
+✓ PASS: Log file exists: ./dev.log
+✓ PASS: Log entries contain IP addresses or entries logged
+✓ PASS: Log entries contain timestamps
+✓ PASS: API key appears to be masked in logs (contains ***)
+ℹ Last 10 lines of log file:
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+  2026-02-10 14:29:08 - INFO - [127.0.0.1] - [127.0.0.1] WOL packet sent to AA:BB:CC:DD:EE:FF (ID: 123456789, key: wol_prod_t***)
+
+>>> Test 10: Error Response Structure Validation
+✓ PASS: Missing parameter: All required fields present
+✓ PASS: Invalid key: All required fields present
+✓ PASS: Unknown ID: All required fields present
+ℹ Total Passed: 33
+ℹ Total Failed: 0
+ℹ Total Tests: 33
+
+================================================================================
+TEST SUMMARY
+================================================================================
+Total Passed: 33
+Total Failed: 0
+Total Tests: 33
