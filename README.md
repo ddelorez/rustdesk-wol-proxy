@@ -95,6 +95,45 @@ curl http://localhost:5001/health
 }
 ```
 
+## Development Context Strategy
+
+### Two-Phase Architecture: Separate Contexts
+
+This project uses **two distinct development contexts** to efficiently manage different technology stacks:
+
+| Aspect | Phase 1 (API/Backend) | Phase 2 (Client/Frontend) |
+|--------|----------------------|--------------------------|
+| **Environment** | **WSL2 Ubuntu 22.04** | **Windows 10/11 Native** |
+| **Language** | Python 3.8+ | Rust 1.7x+ |
+| **Framework** | Flask REST API | RustDesk Client Fork |
+| **Development Terminal** | WSL2 Bash | Windows PowerShell |
+| **Build Tool** | pip/pytest | Cargo/MSVC |
+| **Deployment** | Linux Server (10.10.10.145) | Windows Client Binaries |
+| **Communication** | Listens on port 5001 | Calls HTTP API when needed |
+
+**Key Insight**: Phase 1 and Phase 2 are developed independently, and they communicate via HTTP API. Your WSL2 environment is ideal for Phase 1 — no changes needed there.
+
+### Quick Reference: Which Context Am I In?
+
+- 🔵 **Am I developing the Flask API?** → Use **Phase 1 (WSL2)** → See [`CONTEXT_SWITCHING_GUIDE.md`](docs/CONTEXT_SWITCHING_GUIDE.md)
+- 🟢 **Am I developing the RustDesk Rust client?** → Use **Phase 2 (Windows)** → See [`PHASE2_WINDOWS_SETUP.md`](docs/PHASE2_WINDOWS_SETUP.md)
+- 🔗 **Need both contexts talking?** → See [`PHASE2_DUAL_CONTEXT_WORKFLOW.md`](docs/PHASE2_DUAL_CONTEXT_WORKFLOW.md)
+
+### Network Communication Between Contexts
+
+```
+Phase 1 (API Server)              Phase 2 (Client)
+┌─────────────────────────┐       ┌─────────────────────────┐
+│ Flask API               │       │ RustDesk Client         │
+│ WSL2 Linux              │       │ Windows Native          │
+│ localhost:5001          │◄──────│ HTTP API calls          │
+│ /wake endpoint          │───────│ when offline detected   │
+└─────────────────────────┘       └─────────────────────────┘
+         HTTP/HTTPS API
+```
+
+---
+
 ## Project Structure
 
 ```
@@ -116,7 +155,10 @@ rustdesk-wol-proxy/
 │   ├── API.md                    # Complete API reference
 │   ├── DEPLOYMENT.md             # Deployment procedures
 │   ├── DEVELOPMENT.md            # Development guide
-│   └── QUICK_START.md            # Quick start reference
+│   ├── QUICK_START.md            # Quick start reference
+│   ├── PHASE2_DUAL_CONTEXT_WORKFLOW.md   # Multi-context development guide
+│   ├── CONTEXT_SWITCHING_GUIDE.md        # Context switching reference
+│   └── PHASE2_WINDOWS_SETUP.md           # Windows Phase 2 setup
 ├── requirements.txt              # Python dependencies
 ├── .gitignore                    # Git ignore rules
 └── README.md                     # This file
@@ -124,12 +166,22 @@ rustdesk-wol-proxy/
 
 ## Documentation
 
+### Phase 1 (API Backend - WSL2)
 - **[Quick Start Guide](docs/QUICK_START.md)** - Get up and running quickly
 - **[API Reference](docs/API.md)** - Complete API documentation with examples
 - **[Architecture](docs/ARCHITECTURE.md)** - System design and components
 - **[Deployment](docs/DEPLOYMENT.md)** - Production deployment guide
 - **[Development](docs/DEVELOPMENT.md)** - Development and testing guide
 - **[Testing](tests/README.md)** - Test suite documentation
+
+### Multi-Context Guidance (Phase 1 + Phase 2)
+- **[📋 Dual Context Workflow](docs/PHASE2_DUAL_CONTEXT_WORKFLOW.md)** - Managing Phase 1 (WSL2) and Phase 2 (Windows) development
+- **[🔄 Context Switching Guide](docs/CONTEXT_SWITCHING_GUIDE.md)** - Quick reference for switching between contexts
+- **[⚙️ Development Context Strategy](#development-context-strategy)** - Overview (see section above)
+
+### Phase 2 (RustDesk Client - Windows)
+- **[Windows Setup Guide](docs/PHASE2_WINDOWS_SETUP.md)** - Complete Windows environment configuration
+- **[Phase 2 Design](docs/PHASE2_DESIGN.md)** - Phase 2 architecture and design decisions
 
 ## API Error Codes
 
